@@ -1,132 +1,131 @@
-# ⚙️ Running the Tool
+# 🛠 Windows Utilities
 
-## Option 1: EXE (Recommended)
+A collection of lightweight Windows utilities designed to simplify system maintenance, diagnostics, customization, and software setup.
 
-1. Download the latest `PC-Diagnostic-Tool.exe` from the **Releases** page.
-2. Right-click the file and select **Run as administrator** (recommended for complete system information).
-
-### If Windows SmartScreen appears
-
-If Windows displays **"Windows protected your PC"**:
-
-1. Click **More info**.
-2. Verify the publisher or file name matches the official release.
-3. Click **Run anyway**.
-
-> **Note:** This can happen because the application is new or unsigned.
-
-### If Microsoft Defender quarantines the file
-
-If you downloaded the tool from the official GitHub Releases page and Defender quarantines it:
-
-1. Open **Windows Security**.
-2. Go to **Virus & threat protection**.
-3. Click **Protection history**.
-4. Find the detection for the tool.
-5. Verify it matches the official release you downloaded.
-6. If you're confident it's the official file, you can restore it from quarantine.
+These tools are built using native Windows commands and PowerShell to provide fast, reliable, and easy-to-use solutions for everyday Windows management.
 
 ---
 
-## Option 2: BAT File
+## 📦 Included Utilities
 
-1. Download `PC-Diagnostic-Tool.bat`.
-2. Double click on it or Right-click it and choose **Run as administrator**.
-3. Follow the on-screen prompts.
-
-> **Note:** Some antivirus products may warn about batch files because they can execute system commands. This tool uses built-in Windows commands (such as `systeminfo`, `PowerShell`, and `powercfg`) to collect diagnostic information.
-
----
-
-## Verify the Download
-
-To make sure you have the official version:
-
-- Download only from this repository's **Releases** page.
-- Compare the SHA-256 checksum (if provided) with the one listed in the release notes.
----
-# 🧠 How to Read the Windows Memory Diagnostic Report
-
-After running the Windows Memory Diagnostic Tool (`mdsched.exe`), Windows stores the test results in **Event Viewer**.
-
-## Step 1: Open Event Viewer
-
-- Press **Win + X**
-- Select **Event Viewer**
-
-## Step 2: Navigate to the Memory Diagnostic Logs
-
-Go to:
-
-```
-Windows Logs
-└── System
-```
-
-## Step 3: Find the Memory Diagnostic Result
-
-In the **Actions** pane, click **Find...** (or press **Ctrl + F**).
-
-Search for:
-
-```
-MemoryDiagnostics-Results
-```
-
-or
-
-```
-MemoryDiagnostic
-```
-
-Open the latest event.
-
-## Step 4: View the Result
-
-Select the **General** tab to read the summary.
-
-You may also open the **Details** tab for more technical information.
+| Utility                                      | Description                                                               | Administrator Required |
+| -------------------------------------------- | ------------------------------------------------------------------------- | ---------------------- |
+| 🧹 **Windows Cleanup Utility**               | Removes temporary files, clears caches, and performs routine maintenance. | ✅ Yes                 |
+| 🎨 **Windows Theme Switcher**                | Switches between Windows Light and Dark themes with a single click.       | ❌ No                  |
+| 🌐 **Windows Network Diagnostics**           | Displays network information and helps troubleshoot connectivity issues.  | ❌ No                  |
+| 📥 **Windows System Setup & Apps Installer** | Automates Windows setup and installs commonly used applications.          | ✅ Yes                 |
+| 🔍 **Windows Diagnostics Toolkit**           | Launches useful Windows diagnostic and troubleshooting tools.             | ⚠️ Some features       |
+| 🛠 **Windows Diagnostics Toolkit Installer** | Installs and configures the Diagnostics Toolkit.                          | ✅ Yes                 |
 
 ---
 
-# Understanding the Results
+# 🧹 Windows Cleanup Utility
 
-### ✅ No problems found
+Perform routine Windows maintenance by safely removing unnecessary temporary data.
 
-Example:
+### Features
 
-```
-The Windows Memory Diagnostic tested the computer's memory and detected no errors.
-```
-
-**Meaning:** Your RAM passed the test.
-
----
-
-### ❌ Hardware problems detected
-
-Example:
-
-```
-The Windows Memory Diagnostic tested the computer's memory and detected hardware errors.
-```
-
-**Meaning:** One or more RAM modules may be faulty.
-
-Recommended actions:
-
-- Test each RAM stick individually.
-- Reseat the memory modules.
-- Clean the RAM contacts and slots.
-- Replace the faulty module if errors persist.
+- Clean User Temporary Files
+- Clean Windows Temporary Files
+- Clear Recent Files History
+- Empty Recycle Bin
+- Flush DNS Cache
+- Clear Windows Update Cache
+- Reset Microsoft Store Cache
+- Component Store Cleanup (DISM)
+- Cleanup Summary
 
 ---
 
-# Notes
+# 🎨 Windows Theme Switcher
 
-- The Windows Memory Diagnostic performs a basic memory test.
-- For a more thorough test, consider using **MemTest86**, which performs multiple passes and can detect issues that Windows Memory Diagnostic may miss.
+Quickly switch between Windows Light Mode and Dark Mode.
+
+### Features
+
+- Toggle Windows theme
+- Updates System and Apps theme
+- Lightweight and fast
+- No background processes
 
 ---
 
-**Tip:** If you're buying a used RAM module, always run a memory test before relying on it for important work.
+# 🌐 Windows Network Diagnostics
+
+Collects useful networking information and assists with common troubleshooting.
+
+### Features
+
+- Network configuration
+- IP information
+- DNS information
+- Connectivity diagnostics
+- Quick troubleshooting tools
+
+---
+
+# 📥 Windows System Setup & Apps Installer
+
+Automates the initial Windows setup process after a fresh installation.
+
+### Features
+
+- Install common applications
+- Streamline Windows setup
+- Save time during system configuration
+
+---
+
+# 🔍 Windows Diagnostics Toolkit
+
+A collection of built-in Windows diagnostic utilities.
+
+### Features
+
+- System Information
+- Memory Diagnostics
+- DirectX Diagnostic Tool
+- Resource Monitor
+- Performance Monitor
+- Event Viewer
+- Device Manager
+- Additional troubleshooting tools
+
+---
+
+# 🛠 Windows Diagnostics Toolkit Installer
+
+Installs and configures the Windows Diagnostics Toolkit.
+
+### Features
+
+- Simple installation
+- Automatic configuration
+- Ready-to-use diagnostics environment
+
+---
+
+# 💻 Requirements
+
+- Windows 10 or Windows 11
+- PowerShell
+- Administrator privileges for selected utilities
+
+---
+
+# 🚀 Getting Started
+
+1. Download the latest release from the **Releases** page.
+2. Extract the archive if applicable.
+3. Run the desired utility.
+4. If prompted, allow Administrator access.
+
+---
+
+# 📄 License
+
+This project is licensed under the **MIT License**.
+
+---
+
+⭐ If you find this project useful, consider giving it a star to support future development.
