@@ -1,7 +1,7 @@
 @echo off
 title Windows 11 App Installer
 color 0A
-setlocal
+setlocal EnableDelayedExpansion
 
 echo ============================================
 echo      Windows 11 Software Installer
@@ -48,9 +48,16 @@ exit /b
 :: =================================================
 :InstallApp
 echo.
-echo --------------------------------------------
-echo Installing %~1
-echo --------------------------------------------
+choice /C YN /M "Do you want to install %~1?"
+
+if errorlevel 2 (
+    echo Skipped %~1
+    exit /b
+)
+
+echo.
+echo Installing %~1...
+echo.
 
 winget install --id %~2 ^
 -e ^
@@ -64,4 +71,6 @@ if %errorlevel%==0 (
     echo [FAILED] %~1 installation failed or is already installed.
 )
 
+echo.
+pause
 exit /b
